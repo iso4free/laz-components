@@ -82,7 +82,7 @@ type
     FDockedObject: TForm;
     FDockedPanel: TPanel;
     FCaption: TCaption;
-    FCanClose, FMaximized,FIconized: Boolean;
+    FCanClose, FMaximized: Boolean;
     SavedLeft, SavedTop, SavedHeight, SavedWidth,
     InitialWidth, InitialHeight: Integer;
     FOnCaptionChange, FOnClose, FOnCloseX, FOnMaximize, FOnRestore: TNotifyEvent;
@@ -113,7 +113,6 @@ type
     property DockedPanel: TPanel read FDockedPanel write SetDockedPanel;
     property Caption: TCaption read FCaption write SetCaption;
     property Maximized: Boolean read FMaximized write SetMaximized;
-    Property Iconized : Boolean Read FIconized Write FIconized;
   end;
 
 implementation
@@ -236,10 +235,8 @@ end;
 {-}
 procedure TChildDoc.RestoreSize;
 begin
- Restore;
-
- Width := InitialWidth;
- Height := InitialHeight;
+  Width := InitialWidth;
+  Height := InitialHeight;
 end;
 
 {-}

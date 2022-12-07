@@ -202,7 +202,6 @@ begin
   Inc(FChildIndex);
   SetLength(FChild, FChildIndex + 1);
   FChild[FChildIndex] := TChildDoc.Create(Self);
-
   with FChild[FChildIndex] do
   begin
     Hide;
